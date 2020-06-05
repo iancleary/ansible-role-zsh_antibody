@@ -39,14 +39,14 @@
   become: "yes"
   user:
     name: '{{ ansible_user }}'
-    shell: "{{ zsh_anitbody_default_shell_command }}"
+    shell: "{{ zsh_default_shell_command }}"
   when: "not zsh_anitbody_custom_default_shell_command|bool"
 
 - name: Zsh - set default shell (Non-Default Method)
   become: "yes"
   command:
-    cmd: "{{ zsh_anitbody_default_shell_command }}"
-  when: "zsh_anitbody_custom_default_shell_command|bool"
+    cmd: "{{ zsh_default_shell_command }}"
+  when: "zsh_custom_default_shell_command|bool"
 
 - name: Zsh - write .zshrc
   become: "yes"

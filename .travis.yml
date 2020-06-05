@@ -6,6 +6,7 @@ env:
   global:
     - ROLE_NAME: zsh_antibody
   matrix:
+    - MOLECULE_DISTRO: ubuntu2004
     - MOLECULE_DISTRO: ubuntu1804
 
 install:

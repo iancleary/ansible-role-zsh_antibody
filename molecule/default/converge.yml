@@ -8,10 +8,5 @@
       when: ansible_os_family == 'Debian'
       changed_when: false
 
-    - name: install unzip for archive task
-      apt: name=unzip state=present
-      when: ansible_os_family == 'Debian'
-      changed_when: false
-
   roles:
-    - role: iancleary.jetbrains_mono
+    - role: iancleary.zsh_antibody

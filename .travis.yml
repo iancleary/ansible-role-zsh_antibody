@@ -4,7 +4,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: jetbrains_mono
+    - ROLE_NAME: zsh_antibody
   matrix:
     - MOLECULE_DISTRO: ubuntu1804
 

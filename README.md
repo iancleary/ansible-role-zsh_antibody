@@ -1,18 +1,14 @@
-ansible-role-jetbrains-mono
+ansible-role-zsh_antibody
 =========
 
-This role installs the JetBrains Mono font onto an Ubuntu system.
+This role installs the ZSH, with the antibody plugin manager, onto an Ubuntu system.
 
 Requirements
 ------------
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here.
 
-- `unzip` apt packages for the `unarchive` Ansible module
-
-```bash
-sudo apt-get install -y unzip
-```
+N/A
 
 Role Variables
 --------------
@@ -21,8 +17,8 @@ A description of the settable variables for this role should go here, including 
 
 ```yaml
 ---
-jetbrains_mono_version: 1.0.3
-jetbrains_mono_url: "https://download.jetbrains.com/fonts/JetBrainsMono"
+zsh_antibody_version: 1.0.3
+zsh_antibody_url: "https://download.jetbrains.com/fonts/JetBrainsMono"
 ```
 
 Dependencies
@@ -40,7 +36,7 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
     - hosts: servers
       roles:
-         - { role: iancleary.jetbrains_mono }
+         - { role: iancleary.zsh_antibody }
 ```
 
 License
@@ -52,5 +48,7 @@ Author Information
 ------------------
 
 This role was created in 2020 by [Ian Cleary](https://iancleary.me).
+
+It was derived from the MIT license [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh).
 
 Inspiration for the structure of this repo came from [Jeff Geerling](https://github.com/geerlingguy/ansible-role-nginx).

@@ -1,26 +1,13 @@
 ---
-## JetBrains Mono Font
-- name: install fontconfig for fc-cache tasks
-  become: "yes"
-  apt:
-    name: fontconfig
-    state: present
+- name: Install ZSH
+  import_tasks: install.yml
+
+- name: Enable antibody shell plugin manager
+  include_tasks: antibody.yml
+
+- name: Clone ZSH Plugins
+  include_tasks: zsh-plugins.yml
+
+- name: console setup for Debian family distributions
+  include_tasks: debian-console-setup.yml
   when: ansible_os_family == 'Debian'
-
-# https://askubuntu.com/a/866951
-- name: Check installed fonts
-  command: fc-list | grep JetBrainsMono-{{ jetbrains_mono_version }}
-  register: installed_jetbrains_mono_fonts
-  changed_when: false
-
-- name: Download font
-  include_tasks: download_font.yml
-  when: installed_jetbrains_mono_fonts|length==0
-
-- name: Install font
-  command: fc-cache -f -v
-  when: installed_jetbrains_mono_fonts|length==0
-
-# - name: Configure Font
-#   include_tasks: configure_fonts.yml
-#   when: installed_jetbrains_mono_fonts|length=0

@@ -1,11 +1,11 @@
 galaxy_info:
-  role_name: jetbrains_mono
+  role_name: zsh_antibody
   author: iancleary
-  description: Jetbrains mono font installation for Linux
+  description: Ansible role to install ZSH, with the antibody plugin manager
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
-  issue_tracker_url: http://github.com/iancleary/ansible-role-jetbrains_mono/issues
+  issue_tracker_url: http://github.com/iancleary/ansible-role-zsh_antibody/issues
 
   license: MIT
 
@@ -23,7 +23,8 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - all
+    - bionic
+    - focal
 
   galaxy_tags: ['system', 'development']
     # List tags for your role here, one per line. A tag is a keyword that describes

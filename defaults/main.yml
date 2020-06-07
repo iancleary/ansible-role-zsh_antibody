@@ -14,6 +14,5 @@ zsh_plugins:
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
-zsh_default_shell_command: "/bin/zsh"
 zsh_custom_shell_command: "false"
 # for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

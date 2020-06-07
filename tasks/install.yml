@@ -1,5 +1,5 @@
 ---
-- name: Zsh - install apt dependencies
+- name: install apt dependencies
   become: "yes"
   apt:
     name: "{{ item }}"
@@ -8,57 +8,70 @@
     - git
     - zsh
 
-- name: Zsh - clone oh-my-zsh
+- name: clone oh-my-zsh
   tags:
     # Suppress warning: [ANSIBLE0006] git used in place of git module
     # Git module doesn't allow us to set `core.autocrlf=input`.
     - skip_ansible_lint
   become: "yes"
-  become_user: '{{ ansible_user }}'
+  become_user: '{{ username }}'
   command: >-
     git clone -c core.autocrlf=input --depth=1
      https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
   # core.autocrlf=input prevents
   # https://github.com/robbyrussell/oh-my-zsh/issues/4402
   args:
-    chdir: '~{{ ansible_user }}'
-    creates: '~{{ ansible_user }}/.oh-my-zsh'
+    chdir: '~{{ username }}'
+    creates: '~{{ username }}/.oh-my-zsh'
+  with_items: "{{ users | map(attribute='username') | list }}"
+  loop_control:
+    loop_var: username
 
-- name: Zsh - set permissions of oh-my-zsh
+- name: set permissions of oh-my-zsh
   become: "yes"
   file:
-    path: '~{{ ansible_user }}/.oh-my-zsh'
+    path: '~{{ username }}/.oh-my-zsh'
     # Prevent the cloned repository from having insecure permissions.
     # Failing to do so causes compinit() calls to fail with
     # "command not found: compdef" errors
     # for users with insecure umasks (e.g., "002", allowing group writability).
     mode: 'go-w'
     recurse: "yes"
+  with_items: "{{ users | map(attribute='username') | list }}"
+  loop_control:
+    loop_var: username
 
-- name: Zsh - set default shell (Default Method)
+- name: set default shell (Default Method)
   become: "yes"
   user:
-    name: '{{ ansible_user }}'
-    shell: "{{ zsh_default_shell_command }}"
-  when: "not zsh_anitbody_custom_default_shell_command|bool"
+    name: '{{ username }}'
+    shell: "/bin/zsh"
+  with_items: "{{ users | map(attribute='username') | list }}"
+  loop_control:
+    loop_var: username
+  when: "not zsh_custom_shell_command|bool"
 
-- name: Zsh - set default shell (Non-Default Method)
+- name: set default shell (Non-Default Method)
   become: "yes"
   command:
     cmd: "{{ zsh_default_shell_command }}"
-  when: "zsh_custom_default_shell_command|bool"
+  when: "zsh_custom_shell_command|bool"
 
-- name: Zsh - write .zshrc
+- name: write .zshrc
   become: "yes"
-  become_user: '{{ ansible_user }}'
+  become_user: '{{ user.username }}'
   template:
     src: zshrc.j2
-    dest: '~{{ ansible_user }}/.zshrc'
+    dest: '~{{ user.username }}/.zshrc'
     backup: "yes"
     mode: 'u=rw,go=r'
+  with_items: '{{ users }}'
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=92132
-- name: Zsh - Ensure /etc/profile.d/* files source correctly
+- name: Ensure /etc/profile.d/* files source correctly
   become: "yes"
   lineinfile:
     path: /etc/zsh/zshrc

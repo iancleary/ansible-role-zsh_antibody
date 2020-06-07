@@ -3,6 +3,10 @@ antibody_version: "6.0.1"
 antibody_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh).
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+  #
+  # `name` is required (any valid file name will do so long as it's unique for the bundles)
+  # `url` is git username/repo
+  # `version` is git release and is required if `url` is defined
   # - name: ansible
   # - name: aws
   # - name: docker
@@ -13,10 +17,13 @@ antibody_bundles:
   - name: yarn
   - name: zsh
   # Syntax highlighting bundle.
-  - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
+  - name: zsh-syntax-highlighting
     url: zsh-users/zsh-syntax-highlighting
+    version: 0.7.1
+  # Autosuggestions
   - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
     url: zsh-users/zsh-autosuggestions
+    version: 0.6.4
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

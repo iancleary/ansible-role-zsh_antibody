@@ -5,12 +5,5 @@
 - name: Install antibody plugin manager
   include_tasks: install-antibody.yml
 
-- name: Clone ZSH Plugins
-  include_tasks: zsh-plugins.
-
 - name: Configure ZSH for each user
   include_tasks: configure-zsh.yml
-
-- name: console setup for Debian family distributions
-  include_tasks: debian-console-setup.yml
-  when: ansible_os_family == 'Debian'

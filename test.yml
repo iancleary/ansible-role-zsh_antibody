@@ -1,0 +1,47 @@
+---
+- name: Converge
+  hosts: localhost
+  vars:
+    - antibody_bundles:
+      # Bundles from the default repo (robbyrussell's oh-my-zsh).
+      # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+      #
+      # `name` is required (any valid file name will do so long as it's unique for the bundles)
+      # `url` is git username/repo
+      # `version` is git release and is required if `url` is defined
+      # - name: ansible
+      # - name: aws
+      # - name: docker
+      # - name: docker-compose
+      - name: git
+      # - name: pipenv
+      - name: poetry
+      - name: yarn
+      - name: zsh
+      # Syntax highlighting bundle.
+      - name: zsh-syntax-highlighting
+        repo:
+          url: zsh-users/zsh-syntax-highlighting
+          version: 0.7.1
+      # Autosuggestions
+      - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
+        repo:
+          url: zsh-users/zsh-autosuggestions
+          version: 0.6.4
+    - users:
+        - username: test_usr1
+
+  tasks:
+    - name: Debug
+      debug:
+        msg: '{{ antibody_bundles | map(attribute="repo") | select("defined") | list }}'
+
+    # - name: download zsh-plugins
+    #   git:
+    #     repo: https://github.com/{{ item[0] }}
+    #     dest: ~{{ item[1] }}/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-{{ zsh_theme }}-SLASH-oh-my-zsh/plugins/zsh-autosuggestions
+    #     version: 0.6.4
+    #   with_nested:
+    #     - "{{ antibody_bundles | map(attribute='url') | select('defined') }}"
+    #     - "{{ users | map(attribute='username') | list | select('defined') }}"
+    #     # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60

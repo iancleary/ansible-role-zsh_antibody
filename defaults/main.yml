@@ -25,7 +25,7 @@ antibody_bundles:
   - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
     repo:
       url: zsh-users/zsh-autosuggestions
-      version: 0.6.4
+      version: v0.6.4
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

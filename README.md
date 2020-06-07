@@ -49,6 +49,6 @@ Author Information
 
 This role was created in 2020 by [Ian Cleary](https://iancleary.me).
 
-It was derived from the MIT license [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh).
+It was derived from the MIT licensed [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh) and [gantsign/ansible_role_antigen](https://github.com/gantsign/ansible_role_antigen).
 
 Inspiration for the structure of this repo came from [Jeff Geerling](https://github.com/geerlingguy/ansible-role-nginx).

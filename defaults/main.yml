@@ -1,18 +1,22 @@
 ---
 antibody_version: "6.0.1"
-zsh_theme: robbyrussell
-zsh_plugins:
+antibody_bundles:
+  # Bundles from the default repo (robbyrussell's oh-my-zsh).
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-  # - ansible
-  # - aws
-  # - docker
-  # - docker-compose
-  - git
-  # - pipenv
-  - poetry
-  - yarn
-  - zsh
-  - zsh-autosuggestions
-  - zsh-syntax-highlighting
+  # - name: ansible
+  # - name: aws
+  # - name: docker
+  # - name: docker-compose
+  - name: git
+  # - name: pipenv
+  - name: poetry
+  - name: yarn
+  - name: zsh
+  # Syntax highlighting bundle.
+  - name: zsh-syntax-highlighting # `name` is required (any valid file name will do so long as it's unique for the bundles)
+    url: zsh-users/zsh-syntax-highlighting
+  - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
+    url: zsh-users/zsh-autosuggestions
+zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

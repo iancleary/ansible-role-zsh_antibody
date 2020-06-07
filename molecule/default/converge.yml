@@ -8,7 +8,20 @@
       when: ansible_os_family == 'Debian'
       changed_when: false
 
+    - name: create test users
+      become: yes
+      user:
+        name: '{{ item }}'
+        home: '/home/{{ item }}'
+        createhome: yes
+      loop:
+        - test_usr1
+        - test_usr2
+        - test_usr3
+
   roles:
     - role: iancleary.zsh_antibody
       users:
-        - username: ubuntu
+        - username: test_usr1
+        - username: test_usr2
+        - username: test_usr3

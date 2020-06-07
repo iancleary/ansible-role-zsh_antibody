@@ -1,0 +1,12 @@
+---
+- name: download zsh-plugins
+  git:
+    repo: https://github.com/{{ item[0] }}
+    dest: ~{{ item[1] }}/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-{{ zsh_theme }}-SLASH-oh-my-zsh/plugins/zsh-autosuggestions
+    version: 0.6.4
+  with_items:
+  with_nested:
+    - "{{ antibody_bundles | map(attribute='url') | list }}"
+    - "{{ users | map(attribute='username') | list }}"
+  loop_control:
+    loop_var: username

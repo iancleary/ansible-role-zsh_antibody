@@ -10,3 +10,5 @@
 
   roles:
     - role: iancleary.zsh_antibody
+      users:
+        - username: ubuntu

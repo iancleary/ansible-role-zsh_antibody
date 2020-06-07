@@ -18,12 +18,14 @@ antibody_bundles:
   - name: zsh
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
-    url: zsh-users/zsh-syntax-highlighting
-    version: 0.7.1
+    repo:
+      url: zsh-users/zsh-syntax-highlighting
+      version: 0.7.1
   # Autosuggestions
   - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-    url: zsh-users/zsh-autosuggestions
-    version: 0.6.4
+    repo:
+      url: zsh-users/zsh-autosuggestions
+      version: 0.6.4
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"

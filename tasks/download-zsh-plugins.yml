@@ -1,11 +1,10 @@
 ---
 - name: download zsh-plugins
   git:
-    repo: "https://github.com/{{ item[0] }}"
+    repo: "https://github.com/{{ item[0].url }}"
     dest: "~{{ item[1] }}/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-{{ zsh_theme }}-SLASH-oh-my-zsh/plugins/zsh-autosuggestions"
-    version: "{{ item[2] }}"
+    version: "{{ item[0].version }}"
   with_nested:
-    - "{{ antibody_bundles | map(attribute='url') | select('defined') | list }}"
+    - "{{ antibody_bundles | map(attribute='repo') | select('defined') | list }}"
     - "{{ users | map(attribute='username') | select('defined') | list }}"
-    - "{{ antibody_bundles | map(attribute='version') | select('defined') | list }}"
     # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60

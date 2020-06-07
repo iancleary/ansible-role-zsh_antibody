@@ -5,5 +5,5 @@
     dest: ~{{ item[1] }}/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-{{ zsh_theme }}-SLASH-oh-my-zsh/plugins/zsh-autosuggestions
     version: 0.6.4
   with_nested:
-    - "{{ antibody_bundles | map(attribute='url') | list }}"
-    - "{{ users | map(attribute='username') | list }}"
+    - "{{ antibody_bundles | map(attribute='url') | list | select('defined') }}"
+    - "{{ users | map(attribute='username') | list | select('defined') }}"

@@ -7,3 +7,4 @@
   with_nested:
     - "{{ antibody_bundles | map(attribute='url') | list | select('defined') }}"
     - "{{ users | map(attribute='username') | list | select('defined') }}"
+    # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60

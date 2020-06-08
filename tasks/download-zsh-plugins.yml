@@ -4,21 +4,14 @@
       antibody_plugins_folder: ".cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-{{ zsh_theme }}-SLASH-oh-my-zsh/plugins"
 
 - name: download zsh-plugins
-  tags:
-    # Suppress warning: [ANSIBLE0006] git used in place of git module
-    # Git module doesn't allow us to set `core.autocrlf=input`.
-    - skip_ansible_lint
-  become: "yes"
-  become_user: '{{ item[1] }}'
-  command: >-
-    git clone -c core.autocrlf=input --depth=1  -b {{ item[0].version }} \
-    https://github.com/{{ item[0].url }}.git ~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].url }}
-  # core.autocrlf=input prevents
-  # https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  args:
-    chdir: "~{{ item[1] }}/{{ antibody_plugins_folder }}/"
-    creates: '~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].url }}'
+  git:
+    repo: "https://github.com/{{ item[0].url }}"
+    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/zsh-autosuggestions"
+    version: "{{ item[0].version }}"
   with_nested:
     - "{{ antibody_bundles | map(attribute='repo') | select('defined') | list }}"
     - "{{ users | map(attribute='username') | select('defined') | list }}"
     # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60
+  # register: zsh_antibody_download_zsh_plugins_git_result
+  # changed_when: "zsh_antibody_download_zsh_plugins_git_result.after|default('after') != zsh_antibody_download_zsh_plugins_git_result.before|default('before')"
+  changed_when: "false" # If you care and can figure this out, I'll gladly review a PR :)

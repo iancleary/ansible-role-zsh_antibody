@@ -38,7 +38,7 @@ antibody_bundles:
   # - name: aws
   # - name: docker
   # - name: docker-compose
-  - name: git
+  - name: gitfast
   # - name: pipenv
   - name: poetry
   - name: yarn
@@ -77,7 +77,7 @@ Including an example of how to use your role (for instance, with variables passe
            users:
              - username: example
           antibody_bundles:
-            - name: git
+            - name: gitfast
             # - name: pipenv
             - name: poetry
             - name: yarn
@@ -106,7 +106,7 @@ Author Information
 
 This role was created in 2020 by [Ian Cleary](https://iancleary.me).
 
-It was derived from the MIT licensed [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh) and [iancleary/ansible-role-zsh_antibody](https://github.com/iancleary/ansible-role-zsh_antibody).
+It was derived from the MIT licensed [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh) and [gantsign/ansible-role-antigen](https://github.com/gantsign/ansible-role-antigen).
 
 > I prefer to use antibody, so if you prefer antigen, please use the above antigen repo!
 

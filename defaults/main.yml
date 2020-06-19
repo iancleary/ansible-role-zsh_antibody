@@ -11,7 +11,7 @@ antibody_bundles:
   # - name: aws
   # - name: docker
   # - name: docker-compose
-  - name: git
+  - name: gitfast
   # - name: pipenv
   - name: poetry
   - name: yarn

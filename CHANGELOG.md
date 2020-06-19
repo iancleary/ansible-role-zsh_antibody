@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2020-06-07
+
+### Changed
+
+- Switched from `git` to [gitfast](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gitfast) oh-my-zsh plugin
+
 ## [0.1.0] - 2020-06-07
 
 ### Added

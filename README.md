@@ -54,8 +54,10 @@ antibody_bundles:
       url: zsh-users/zsh-autosuggestions
       version: v0.6.4
 zsh_theme: robbyrussell
-zsh_custom_shell_command: "false" # useful when users are bound to external systems (active directory)
-# for example "/opt/pbis/bin/config LoginShellTemplate $(which zsh)"
+zsh_custom_shell_command: "false"
+# useful when users are bound to external systems (i.e. active directory)
+# zsh_custom_shell_command: "true"
+# zsh_default_shell_command: "/opt/pbis/bin/config LoginShellTemplate /usr/bin/zsh"
 ```
 
 Dependencies
@@ -71,27 +73,27 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ```yaml
-    - hosts: servers
-      roles:
-         - role: iancleary.zsh_antibody
-           users:
-             - username: example
-          antibody_bundles:
-            - name: gitfast
-            # - name: pipenv
-            - name: poetry
-            - name: yarn
-            - name: zsh
-            # Syntax highlighting bundle.
-            - name: zsh-syntax-highlighting
-              repo:
-                url: zsh-users/zsh-syntax-highlighting
-                version: 0.7.1
-            # Autosuggestions
-            - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-              repo:
-                url: zsh-users/zsh-autosuggestions
-                version: v0.6.4
+- hosts: servers
+  roles:
+    - role: iancleary.zsh_antibody
+      users:
+        - username: example
+      antibody_bundles:
+        - name: gitfast
+        # - name: pipenv
+        - name: poetry
+        - name: yarn
+        - name: zsh
+        # Syntax highlighting bundle.
+        - name: zsh-syntax-highlighting
+          repo:
+            url: zsh-users/zsh-syntax-highlighting
+            version: 0.7.1
+        # Autosuggestions
+        - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
+          repo:
+            url: zsh-users/zsh-autosuggestions
+            version: v0.6.4
 ```
 
 > Note: the role currently assumes all users want the same plugins, pull requests welcome if you'd prefer per user `antibody_bundles`

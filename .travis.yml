@@ -2,6 +2,10 @@
 language: python
 services: docker
 
+branches:
+  only:
+    - "main"
+
 env:
   global:
     - ROLE_NAME: zsh_antibody

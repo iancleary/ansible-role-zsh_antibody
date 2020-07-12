@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Fedora 31 and 32 support
+- Changed TravisCI logic to only build on "main" branch and Pull Requests (please make a draft PR to test)
 
 ## [0.2.0] - 2020-06-18
 

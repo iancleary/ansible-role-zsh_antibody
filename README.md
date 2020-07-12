@@ -17,7 +17,14 @@ Requirements
 
 Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here.
 
-N/A
+Supported and Tested `ansible_os_families`:
+
+* Ubuntu 18.04
+* Ubuntu 20.04
+* Fedora 31
+* Fedora 32
+
+> Pull Requests welcome!
 
 Role Variables
 --------------

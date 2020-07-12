@@ -112,8 +112,13 @@ antibody bundle robbyrussell/oh-my-zsh path:lib path:plugins/{{ antibody_bundles
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
-# apt upgrades
+# apt/dnf upgrades
+{% if ansible_os_family == "Debian" %}
 alias full-upgrade="sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove"
+{% elif ansible_os_family == "RedHat" %}
+alias full-upgrade="sudo apt -y upgrade && sudo apt -y autoremove"
+{% endif %}
+
 
 ### ----------------------------------------------
 # Please add per application scripts to the

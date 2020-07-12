@@ -7,6 +7,17 @@
   loop:
     - git
     - zsh
+  when: ansible_os_family == 'Debian'
+
+- name: install dnf dependencies
+  become: "yes"
+  dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - zsh
+  when: ansible_os_family == 'RedHat'
 
 - name: clone oh-my-zsh
   tags:

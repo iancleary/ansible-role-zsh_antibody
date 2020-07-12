@@ -3,9 +3,14 @@
   hosts: all
 
   pre_tasks:
-    - name: Update apt cache.
+    - name: Update apt cache. (Deb)
       apt: update_cache=yes cache_valid_time=600
       when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Update dnf cache. (Rpm)
+      dnf: update_cache=yes
+      when: ansible_os_family == 'RedHat'
       changed_when: false
 
     - name: create test users

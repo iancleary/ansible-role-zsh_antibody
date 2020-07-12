@@ -4,3 +4,11 @@
   apt:
     deb: >-
       https://github.com/getantibody/antibody/releases/download/v{{ antibody_version }}/antibody_{{ antibody_version }}_linux_amd64.deb
+  when: ansible_os_family == 'Debian'
+
+- name: Install Anitbody rpm from github
+  become: true
+  apt:
+    dnf: >-
+      https://github.com/getantibody/antibody/releases/download/v{{ antibody_version }}/antibody_{{ antibody_version }}_linux_amd64.rpm
+  when: ansible_os_family == 'RedHat'

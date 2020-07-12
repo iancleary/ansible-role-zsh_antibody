@@ -8,12 +8,19 @@
     path: /etc/default/console-setup
   register: console_setup_file
 
-- name: install console-setup
+- name: install console-setup (deb)
   become: "yes"
   apt:
     name: console-setup
     state: present
-  when: console_setup_file.stat.exists
+  when: console_setup_file.stat.exists and ansible_os_family == 'Debian'
+
+- name: install console-setup (dnf)
+  become: "yes"
+  dnf:
+    name: console-setup
+    state: present
+  when: console_setup_file.stat.exists and ansible_os_family == 'RedHat'
 
 - name: edit console-setup to utf-8
   become: "yes"

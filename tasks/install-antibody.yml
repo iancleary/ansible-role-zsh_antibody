@@ -8,7 +8,7 @@
 
 - name: Install Anitbody rpm from github
   become: true
-  apt:
-    dnf: >-
+  dnf:
+    name: >-
       https://github.com/getantibody/antibody/releases/download/v{{ antibody_version }}/antibody_{{ antibody_version }}_linux_amd64.rpm
   when: ansible_os_family == 'RedHat'

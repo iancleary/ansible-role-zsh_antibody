@@ -8,11 +8,6 @@
       when: ansible_os_family == 'Debian'
       changed_when: false
 
-    - name: Update dnf cache. (Rpm)
-      dnf: update_cache=yes
-      when: ansible_os_family == 'RedHat'
-      changed_when: false
-
     - name: create test users
       become: yes
       user:

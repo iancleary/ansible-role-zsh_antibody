@@ -20,7 +20,7 @@
 
 - name: set-fact user list to write .zshrc
   set_fact:
-    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list}}"
+    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list }}"
 
 - name: Debug zshrc_users
   debug:

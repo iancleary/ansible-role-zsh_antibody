@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-07-24
+
+### Changed
+
+- `repo` variable now has `user`, `repo` attributes instead of `url`
+- Fixed bug where plugins folder was always [zsh-autosuggestions](https://github.com/iancleary/ansible-role-zsh_antibody/blob/15c3751c2b59bb212c4289284a0ed380c5a1745c/tasks/download-zsh-plugins.yml#L9)
+
 ## [0.3.0] - 2020-07-12
 
 ### Added
@@ -29,7 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial role! 🚀
 
-[Unreleased]: https://github.com/iancleary/ansible-role-zsh_antibody/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-role-zsh_antibody/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.4.0
 [0.3.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.3.0
 [0.2.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.2.0
 [0.1.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.1.0

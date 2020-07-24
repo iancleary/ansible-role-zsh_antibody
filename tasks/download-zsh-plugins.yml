@@ -5,11 +5,11 @@
 
 - name: download zsh-plugins
   git:
-    repo: "https://github.com/{{ item[0].url }}"
-    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/zsh-autosuggestions"
+    repo: "https://github.com/{{ item[0].user }}/{{ item[0].repo }}"
+    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].name }}"
     version: "{{ item[0].version }}"
   with_nested:
-    - "{{ antibody_bundles | map(attribute='repo') | select('defined') | list }}"
+    - "{{ antibody_bundles | map(attribute='git') | select('defined') | list }}"
     - "{{ users | map(attribute='username') | select('defined') | list }}"
     # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60
   # register: zsh_antibody_download_zsh_plugins_git_result

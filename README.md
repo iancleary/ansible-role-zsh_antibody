@@ -39,12 +39,9 @@ antibody_bundles:
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
   #
   # `name` is required (any valid file name will do so long as it's unique for the bundles)
-  # `url` is git username/repo
+  # `repo` is git username
+  # `repo
   # `version` is git release and is required if `url` is defined
-  # - name: ansible
-  # - name: aws
-  # - name: docker
-  # - name: docker-compose
   - name: gitfast
   # - name: pipenv
   - name: poetry
@@ -52,14 +49,22 @@ antibody_bundles:
   - name: zsh
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
-    repo:
-      url: zsh-users/zsh-syntax-highlighting
+    git:
+      user: zsh-users
+      repo: zsh-syntax-highlighting
       version: 0.7.1
   # Autosuggestions
   - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-    repo:
-      url: zsh-users/zsh-autosuggestions
+    git:
+      user: zsh-users
+      repo: zsh-autosuggestions
       version: v0.6.4
+  # ZSH Theme
+  - name: powerlevel10k
+    git:
+      user: romkatv
+      repo: powerlevel10k
+      version: v1.12.0
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # useful when users are bound to external systems (i.e. active directory)
@@ -87,7 +92,6 @@ Including an example of how to use your role (for instance, with variables passe
         - username: example
       antibody_bundles:
         - name: gitfast
-        # - name: pipenv
         - name: poetry
         - name: yarn
         - name: zsh
@@ -96,14 +100,11 @@ Including an example of how to use your role (for instance, with variables passe
           repo:
             url: zsh-users/zsh-syntax-highlighting
             version: 0.7.1
-        # Autosuggestions
-        - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-          repo:
-            url: zsh-users/zsh-autosuggestions
-            version: v0.6.4
 ```
 
-> Note: the role currently assumes all users want the same plugins, pull requests welcome if you'd prefer per user `antibody_bundles`
+> Note: the role currently assumes:
+
+* all users want the same plugins, pull requests welcome if you'd prefer per user `antibody_bundles`
 
 License
 -------

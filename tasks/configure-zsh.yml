@@ -18,6 +18,14 @@
 - name: download zsh-plugins
   include_tasks: download-zsh-plugins.yml
 
+- name: set-fact user list to write .zshrc
+  set_fact:
+    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list}}"
+
+- name: Debug zshrc_users
+  debug:
+    var: zshrc_users
+
 - name: write .zshrc
   become: "yes"
   become_user: '{{ user.username }}'
@@ -26,7 +34,7 @@
     dest: '~{{ user.username }}/.zshrc'
     backup: "yes"
     mode: 'u=rw,go=r'
-  with_items: "{{ users | selectattr('skip_zshrc', 'undefined') }}"
+  with_items: "{{ zshrc_users }}"
   loop_control:
     loop_var: user
     label: '{{ user.username }}'

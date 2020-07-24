@@ -6,7 +6,7 @@
 - name: download zsh-plugins
   git:
     repo: "https://github.com/{{ item[0].user }}/{{ item[0].repo }}"
-    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].name }}"
+    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].repo }}"
     version: "{{ item[0].version }}"
   with_nested:
     - "{{ antibody_bundles | map(attribute='git') | select('defined') | list }}"

@@ -89,7 +89,10 @@ Including an example of how to use your role (for instance, with variables passe
   roles:
     - role: iancleary.zsh_antibody
       users:
-        - username: example
+        - username: test_usr1
+        - username: test_usr2
+        - username: test_usr3
+          skip_zshrc: true
       antibody_bundles:
         - name: gitfast
         - name: poetry

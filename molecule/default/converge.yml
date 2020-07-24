@@ -62,3 +62,4 @@
         - username: test_usr1
         - username: test_usr2
         - username: test_usr3
+          skip_zshrc: true

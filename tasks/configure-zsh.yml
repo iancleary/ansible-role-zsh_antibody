@@ -26,7 +26,7 @@
     dest: '~{{ user.username }}/.zshrc'
     backup: "yes"
     mode: 'u=rw,go=r'
-  with_items: '{{ users }}'
+  with_items: "{{ users | selectattr('skip_zshrc', 'undefined') }}"
   loop_control:
     loop_var: user
     label: '{{ user.username }}'

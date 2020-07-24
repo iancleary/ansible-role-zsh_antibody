@@ -98,7 +98,8 @@ Including an example of how to use your role (for instance, with variables passe
         # Syntax highlighting bundle.
         - name: zsh-syntax-highlighting
           repo:
-            url: zsh-users/zsh-syntax-highlighting
+            user: zsh-users
+            repo: zsh-syntax-highlighting
             version: 0.7.1
 ```
 

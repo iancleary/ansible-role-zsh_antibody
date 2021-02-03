@@ -21,8 +21,6 @@ Supported and Tested `ansible_os_families`:
 
 * Ubuntu 18.04
 * Ubuntu 20.04
-* Fedora 31
-* Fedora 32
 
 > Pull Requests welcome!
 
@@ -33,7 +31,7 @@ A description of the settable variables for this role should go here, including 
 
 ```yaml
 ---
-antibody_version: "6.0.1"
+antibody_version: "6.1.1"
 antibody_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins

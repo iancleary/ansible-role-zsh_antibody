@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Switch from travis to GitHub Workflows
+- Bumped Anitbody from 6.0.1 to 6.1.1
+
+### Removed
+
+- Archiving this role since Antibody is now deprecated.
+- Dropping Fedora support
+
 ## [0.5.0] - 2020-07-24
 
 ### Added

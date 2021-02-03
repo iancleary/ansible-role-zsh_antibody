@@ -44,7 +44,6 @@ jobs:
         distro:
           - ubuntu2004
           - ubuntu1804
-          - fedora33
 
     steps:
       - name: Check out the codebase.

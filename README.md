@@ -21,7 +21,6 @@ Supported and Tested `ansible_os_families`:
 
 * Ubuntu 18.04
 * Ubuntu 20.04
-* Fedora 33
 
 > Pull Requests welcome!
 

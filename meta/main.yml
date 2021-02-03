@@ -27,8 +27,7 @@ galaxy_info:
     - focal
   - name: Fedora
     versions:
-    - 31
-    - 32
+    - 33
 
   galaxy_tags: ['system', 'development']
     # List tags for your role here, one per line. A tag is a keyword that describes

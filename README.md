@@ -1,24 +1,24 @@
-ansible-role-zsh_antibody
+ansible-role-zsh
 =========
 
 <p align="center">
 
-<a href="https://github.com/iancleary/ansible-role-zsh_antibody/actions?query=workflow%3Aci" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-zsh_antibody/workflows/CI/badge.svg" alt="CI workflow status">
+<a href="https://github.com/iancleary/ansible-role-zsh/actions?query=workflow%3Aci" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-zsh/workflows/CI/badge.svg" alt="CI workflow status">
 </a>
 
-<a href="https://github.com/iancleary/ansible-role-zsh_antibody/actions?query=workflow%3Arelease" target="_blank">
-    <img src="https://github.com/iancleary/ansible-role-zsh_antibody/workflows/Release/badge.svg" alt="Release workflow status">
+<a href="https://github.com/iancleary/ansible-role-zsh/actions?query=workflow%3Arelease" target="_blank">
+    <img src="https://github.com/iancleary/ansible-role-zsh/workflows/Release/badge.svg" alt="Release workflow status">
 </a>
-<a href="https://galaxy.ansible.com/iancleary/zsh_antibody" target="_blank">
-    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.zsh_antibody-blue.svg" alt="Ansible Galaxy">
+<a href="https://galaxy.ansible.com/iancleary/zsh" target="_blank">
+    <img src="https://img.shields.io/badge/ansible--galaxy-iancleary.zsh-blue.svg" alt="Ansible Galaxy">
 </a>
-<a href="https://raw.githubusercontent.com/iancleary/ansible-role-zsh_antibody/main/LICENSE" target="_blank">
+<a href="https://raw.githubusercontent.com/iancleary/ansible-role-zsh/main/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
 </a>
 </p>
 
-This role installs the [ZSH](https://www.zsh.org/), with the [antibody](https://getantibody.github.io/) plugin manager, onto a supported Linux system (see Requirements section below for list of supported OS).
+This role installs the [ZSH](https://www.zsh.org/), with the [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) plugin manager, onto a supported Linux system (see Requirements section below for list of supported OS).
 
 Official plugins can be found here:
 
@@ -44,8 +44,7 @@ A description of the settable variables for this role should go here, including 
 
 ```yaml
 ---
-antibody_version: "6.1.1"
-antibody_bundles:
+ohmyzsh_bundles:
   # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
   # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
   #
@@ -99,13 +98,13 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
 - hosts: servers
   roles:
-    - role: iancleary.zsh_antibody
+    - role: iancleary.zsh
       users:
         - username: test_usr1
         - username: test_usr2
         - username: test_usr3
           skip_zshrc: true
-      antibody_bundles:
+      ohmyzsh_bundles:
         - name: gitfast
         - name: poetry
         - name: yarn
@@ -120,7 +119,7 @@ Including an example of how to use your role (for instance, with variables passe
 
 > Note: the role currently assumes:
 
-* all users want the same plugins, pull requests welcome if you'd prefer per user `antibody_bundles`
+* all users want the same plugins, pull requests welcome if you'd prefer per user `ohmyzsh_bundles`
 
 License
 -------

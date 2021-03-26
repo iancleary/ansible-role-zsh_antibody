@@ -28,7 +28,7 @@
   become_user: '{{ username }}'
   command: >-
     git clone -c core.autocrlf=input --depth=1
-     https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+     https://github.com/ohmyzsh/ohmyzsh .oh-my-zsh
   # core.autocrlf=input prevents
   # https://github.com/robbyrussell/oh-my-zsh/issues/4402
   args:

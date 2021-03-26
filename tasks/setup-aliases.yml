@@ -11,3 +11,7 @@
     dest: '~{{ user.username }}/.zshrc_aliases'
     backup: "yes"
     mode: 'u=rw,go=r'
+  with_items: "{{ zshrc_users }}"
+  loop_control:
+    loop_var: user
+    label: '{{ user.username }}'

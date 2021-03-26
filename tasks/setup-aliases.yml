@@ -1,3 +1,4 @@
+---
 - name: write .zshrc_aliases
   become: "yes"
   become_user: '{{ user.username }}'

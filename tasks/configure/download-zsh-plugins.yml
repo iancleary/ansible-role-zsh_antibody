@@ -5,13 +5,14 @@
 
 - name: download zsh-plugins
   git:
-    repo: "https://github.com/{{ item[0].user }}/{{ item[0].repo }}"
-    dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].repo }}"
-    version: "{{ item[0].version }}"
+      repo: "https://github.com/{{ item[0].user }}/{{ item[0].repo }}"
+      dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].repo }}"
+      version: "{{ item[0].version }}"
   with_nested:
-    - "{{ ohmyzsh_bundles | map(attribute='git') | select('defined') | list }}"
-    - "{{ users | map(attribute='username') | select('defined') | list }}"
-    # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60
-  # register: zsh_download_zsh_plugins_git_result
-  # changed_when: "zsh_download_zsh_plugins_git_result.after|default('after') != zsh_download_zsh_plugins_git_result.before|default('before')"
-  changed_when: "false" # If you care and can figure this out, I'll gladly review a PR :)
+      # yamllint disable-line rule:line-length
+      - "{{ ohmyzsh_bundles | map(attribute='git') | select('defined') | list }}"
+      # yamllint disable-line rule:line-length
+      - "{{ users | map(attribute='username') | select('defined') | list }}"
+      # https://medium.com/opsops/filtering-away-an-undefined-value-from-a-list-in-ansible-867ff4574b60
+  # If you care and can figure this out, I'll gladly review a PR :)
+  changed_when: "false"

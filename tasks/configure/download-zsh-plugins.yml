@@ -1,12 +1,12 @@
 ---
 - name: set fact ohmyzsh_plugins_folder
   set_fact:
-      ohmyzsh_plugins_folder: ".ohmyzsh/plugins"
+      ohmyzsh_plugins_folder: ".oh-my-zsh/plugins"
 
 - name: download zsh-plugins
   git:
       repo: "https://github.com/{{ item[0].user }}/{{ item[0].repo }}"
-      dest: "~{{ item[1] }}/{{ antibody_plugins_folder }}/{{ item[0].repo }}"
+      dest: "~{{ item[1] }}/{{ ohmyzsh_plugins_folder }}/{{ item[0].repo }}"
       version: "{{ item[0].version }}"
   with_nested:
       # yamllint disable-line rule:line-length

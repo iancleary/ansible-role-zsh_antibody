@@ -1,5 +1,5 @@
 {{ ansible_managed | comment }}
 
 {% for zsh_alias in zsh_aliases %}
-alias={{ zsh_alias }}
+alias {{ zsh_alias }}
 {% endfor %}

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Switched from Antibody to oh-my-zsh
 ## [1.0.0] - 2021-02-02
 ### Changed
 
@@ -41,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `repo` variable now has `user`, `repo` attributes instead of `url`
-- Fixed bug where plugins folder was always [zsh-autosuggestions](https://github.com/iancleary/ansible-role-zsh_antibody/blob/15c3751c2b59bb212c4289284a0ed380c5a1745c/tasks/download-zsh-plugins.yml#L9)
+- Fixed bug where plugins folder was always [zsh-autosuggestions](https://github.com/iancleary/ansible-role-zsh/blob/15c3751c2b59bb212c4289284a0ed380c5a1745c/tasks/download-zsh-plugins.yml#L9)
 
 ## [0.3.0] - 2020-07-12
 
@@ -65,12 +68,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial role! 🚀
 
-[Unreleased]: https://github.com/iancleary/ansible-role-zsh_antibody/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v1.0.0
-[0.5.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.5.0
-[0.4.2]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.4.2
-[0.4.1]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.4.1
-[0.4.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.4.0
-[0.3.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.3.0
-[0.2.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.2.0
-[0.1.0]: https://github.com/iancleary/ansible-role-zsh_antibody/releases/tag/v0.1.0
+[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v1.0.0
+[0.5.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.5.0
+[0.4.2]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.4.2
+[0.4.1]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.4.1
+[0.4.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.4.0
+[0.3.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.3.0
+[0.2.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.2.0
+[0.1.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.1.0

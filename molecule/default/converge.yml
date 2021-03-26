@@ -10,7 +10,7 @@
 
     - name: Set defaults for testing only
       set_fact:
-        antibody_bundles:
+        ohmyzsh_bundles:
           # Bundles from the default repo (robbyrussell's oh-my-zsh) only need a name
           # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
           #
@@ -57,7 +57,7 @@
         - test_usr3
 
   roles:
-    - role: iancleary.zsh_antibody
+    - role: iancleary.zsh
       users:
         - username: test_usr1
         - username: test_usr2

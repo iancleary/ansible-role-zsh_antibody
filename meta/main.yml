@@ -1,11 +1,11 @@
 galaxy_info:
-  role_name: zsh_antibody
+  role_name: zsh
   author: iancleary
   description: Ansible role to install ZSH, with the antibody plugin manager
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
-  issue_tracker_url: http://github.com/iancleary/ansible-role-zsh_antibody/issues
+  issue_tracker_url: http://github.com/iancleary/ansible-role-zsh/issues
 
   license: MIT
 

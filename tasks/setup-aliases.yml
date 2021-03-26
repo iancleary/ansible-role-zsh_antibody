@@ -1,0 +1,8 @@
+- name: write .zshrc_aliases
+  become: "yes"
+  become_user: '{{ user.username }}'
+  template:
+    src: zshrc_aliases.j2
+    dest: '~{{ user.username }}/.zshrc_aliases'
+    backup: "yes"
+    mode: 'u=rw,go=r'

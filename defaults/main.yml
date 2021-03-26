@@ -1,9 +1,7 @@
 ---
-antibody_version: "6.1.1"
-anitbody_arch: "amd" # or "arm"
-antibody_bundles: []
 zsh_theme: robbyrussell
 zsh_custom_shell_command: "false"
 # useful when users are bound to external systems (i.e. active directory)
 # zsh_custom_shell_command: "true"
 # zsh_default_shell_command: "/opt/pbis/bin/config LoginShellTemplate /usr/bin/zsh"
+zsh_aliases: []

@@ -16,7 +16,7 @@
   when: "zsh_custom_shell_command|bool"
 
 - name: download zsh-plugins
-  include_tasks: download-zsh-plugins.yml
+  include_tasks: configure/download-zsh-plugins.yml
 
 - name: set-fact user list to write .zshrc
   set_fact:
@@ -53,5 +53,5 @@
   # privilege escalation related?
 
 - name: console setup for Debian family distributions
-  include_tasks: debian-console-setup.yml
+  include_tasks: configure/debian-console-setup.yml
   when: ansible_os_family == 'Debian'

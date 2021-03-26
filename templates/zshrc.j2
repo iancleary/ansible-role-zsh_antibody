@@ -1,7 +1,7 @@
 {{ ansible_managed | comment }}
 
-{% set plugins_antibody_bundles_names = antibody_bundles | selectattr("skip_zshrc_plugin", "undefined")  | map(attribute='name') | list %}
-{% set all_antibody_bundles_names = antibody_bundles  | map(attribute='name') | list %}
+{% set plugins_ohmyzsh_bundles_names = ohmyzsh_bundles | selectattr("skip_zshrc_plugin", "undefined")  | map(attribute='name') | list %}
+{% set all_ohmyzsh_bundles_names = ohmyzsh_bundles  | map(attribute='name') | list %}
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -73,19 +73,16 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=({{ plugins_antibody_bundles_names | join(' ') }}) # deprecated with antibody
+# plugins=({{ plugins_ohmyzsh_bundles_names | join(' ') }}) # deprecated with antibody
 
 source $ZSH/oh-my-zsh.sh
 
-# https://github.com/getantibody/antibody/issues/261#issuecomment-533464072
-source <(antibody init)
-ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-
 # https://github.com/getantibody/antibody/issues/261#issuecomment-616205908
-{% if plugins_antibody_bundles_names | length > 0 %}
-antibody bundle robbyrussell/oh-my-zsh path:lib path:plugins/{{ plugins_antibody_bundles_names | join(' path:plugins/') }}
+{% if plugins_ohmyzsh_bundles_names | length > 0 %}
+plugins=(
+  {{ plugins_ohmyzsh_bundles_names | join('\n') }}
+)
 {% endif %}
-
 
 # User configuration
 
@@ -113,16 +110,13 @@ antibody bundle robbyrussell/oh-my-zsh path:lib path:plugins/{{ plugins_antibody
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
-# apt/dnf upgrades
-{% if ansible_os_family == "Debian" %}
-alias full-upgrade="sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove"
-{% elif ansible_os_family == "RedHat" %}
-alias full-upgrade="sudo apt -y upgrade && sudo apt -y autoremove"
-{% endif %}
+# include .zshrc_aliases if it exists
+if [ -f $HOME/.zshrc_aliases ]; then
+    . $HOME/.zshrc_aliases
+fi
 
-
-{% if "powerlevel10k" in all_antibody_bundles_names%}
-source $(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+{% if "powerlevel10k" in all_ohmyzsh_bundles_names%}
+source $(oh-my-zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 {% endif %}
 
 ### ----------------------------------------------

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-03-26
+
+### Added
+
+- alias support in `~/.zshrc_aliases`
 ### Changed
 
 - Switched from Antibody to oh-my-zsh
@@ -68,7 +73,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial role! 🚀
 
-[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.0
 [1.0.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v1.0.0
 [0.5.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.5.0
 [0.4.2]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v0.4.2

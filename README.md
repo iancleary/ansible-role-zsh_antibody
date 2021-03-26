@@ -53,7 +53,7 @@ ohmyzsh_bundles:
   # `git.repo` is git repo name
   # `git.version` is git release
   ## **** While `git` is option, if used, all three git attributes are required ****
-  - name: gitfast
+   - name: gitfast
   # - name: pipenv
   - name: poetry
   - name: yarn
@@ -64,14 +64,14 @@ ohmyzsh_bundles:
       user: zsh-users
       repo: zsh-syntax-highlighting
       version: 0.7.1
-  # Autosuggestions
-  - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
-    git:
-      user: zsh-users
-      repo: zsh-autosuggestions
-      version: v0.6.4
-  # ZSH Theme
+  # # Autosuggestions
+  # - name: zsh-autosuggestions # `name` is required (any valid file name will do so long as it's unique for the bundles)
+  #   repo:
+  #     user: zsh-users
+  #     repo: zsh-autosuggestions
+  #     version: v0.6.4
   - name: powerlevel10k
+    skip_zshrc_plugin:
     git:
       user: romkatv
       repo: powerlevel10k
@@ -115,6 +115,14 @@ Including an example of how to use your role (for instance, with variables passe
             user: zsh-users
             repo: zsh-syntax-highlighting
             version: 0.7.1
+      zsh_aliases:
+        # https://opensource.com/article/19/7/bash-aliases
+        - ls='ls -F'
+        - ll='ls -lh'
+        - mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+        - gh='history|grep' # search bash history
+        - left='ls -t -1' # most recently edited files
+        - cg='cd `git rev-parse --show-toplevel`' # go to git main level
 ```
 
 > Note: the role currently assumes:
@@ -129,10 +137,8 @@ License
 Author Information
 ------------------
 
-This role was created in 2020 by [Ian Cleary](https://iancleary.me).
+This role was created in 2020 by [Ian Cleary](https://blog.iancleary.me).
 
-It was derived from the MIT licensed [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh) and [gantsign/ansible-role-antigen](https://github.com/gantsign/ansible-role-antigen).
-
-> I prefer to use antibody, so if you prefer antigen, please use the above antigen repo!
+It was derived from the MIT licensed [gantsign/ansible-role-oh-my-zsh](https://github.com/gantsign/ansible-role-oh-my-zsh).
 
 Inspiration for the structure of this repo came from [Jeff Geerling](https://github.com/geerlingguy/ansible-role-nginx).

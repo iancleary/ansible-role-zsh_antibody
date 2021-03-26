@@ -18,10 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - alias support in `~/.zshrc_aliases`
+
 ### Changed
 
 - Switched from Antibody to oh-my-zsh
+
 ## [1.0.0] - 2021-02-02
+
 ### Changed
 
 - Switch from travis to GitHub Workflows

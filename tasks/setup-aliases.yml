@@ -1,4 +1,8 @@
 ---
+- name: set-fact user list to write .zshrc
+  set_fact:
+    zshrc_users: "{{ users | selectattr('skip_zshrc', 'undefined') | list }}"
+
 - name: write .zshrc_aliases
   become: "yes"
   become_user: '{{ user.username }}'

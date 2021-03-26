@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-03-26
+
+### Added
+
+- alias support in `~/.zshrc_aliases`
 ### Changed
 
 - Switched from Antibody to oh-my-zsh

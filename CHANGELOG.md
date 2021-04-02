@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2021-04-01
+
+### Changed
+
+- Fixed order of `.zshrc` plugins and `oh-my-zsh.sh` lines
+- Removed stale default plugins
+
 ## [2.0.1] - 2021-03-26
 
 ### Changed
@@ -82,7 +89,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial role! 🚀
 
-[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.2
 [2.0.1]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.1
 [2.0.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.0
 [1.0.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v1.0.0

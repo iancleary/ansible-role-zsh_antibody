@@ -55,9 +55,7 @@ ohmyzsh_bundles:
   ## **** While `git` is option, if used, all three git attributes are required ****
    - name: gitfast
   # - name: pipenv
-  - name: poetry
   - name: yarn
-  - name: zsh
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
     git:
@@ -106,9 +104,7 @@ Including an example of how to use your role (for instance, with variables passe
           skip_zshrc: true
       ohmyzsh_bundles:
         - name: gitfast
-        - name: poetry
         - name: yarn
-        - name: zsh
         # Syntax highlighting bundle.
         - name: zsh-syntax-highlighting
           git:

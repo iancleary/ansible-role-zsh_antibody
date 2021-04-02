@@ -12,10 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Fixed order of `.zshrc` plugins and `oh-my-zsh.sh` lines
-
-### Changed
-
-- Typo in meta/main.yml for Ansible Galaxy
+- Removed stale default plugins
 
 ## [2.0.1] - 2021-03-26
 

@@ -25,9 +25,7 @@ ohmyzsh_bundles:
   # - name: docker-compose
   - name: gitfast
   # - name: pipenv
-  - name: poetry
   - name: yarn
-  - name: zsh
   # Syntax highlighting bundle.
   - name: zsh-syntax-highlighting
     git:

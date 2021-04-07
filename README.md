@@ -116,7 +116,7 @@ Including an example of how to use your role (for instance, with variables passe
         - ls='ls -F'
         - ll='ls -lh'
         - mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-        - gh='history|grep' # search bash history
+        - hg='history|grep' # search bash history, I swapped the letters for github-cli compatibility
         - left='ls -t -1' # most recently edited files
         - cg='cd `git rev-parse --show-toplevel`' # go to git main level
 ```

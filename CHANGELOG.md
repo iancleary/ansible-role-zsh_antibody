@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Added Fedora 34 Support
+
 ## [2.0.3] - 2021-04-06
 
 ### Changed

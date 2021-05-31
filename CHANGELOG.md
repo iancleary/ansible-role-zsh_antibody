@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2021-05-31
+
 ### Changed
 
 - Added Fedora 34 Support
@@ -98,7 +100,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial role! 🚀
 
-[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v2.0.3...HEAD
+[Unreleased]: https://github.com/iancleary/ansible-role-zsh/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.1.0
 [2.0.3]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.3
 [2.0.2]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.2
 [2.0.1]: https://github.com/iancleary/ansible-role-zsh/releases/tag/v2.0.1
